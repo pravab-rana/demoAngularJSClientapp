@@ -8,11 +8,15 @@ import { LoginComponent } from './login/login.component';
 import { routing } from './app.routes';
 
 import { LoginService } from './login.service';
+import { HelpComponent } from './help/help.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HelpComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
