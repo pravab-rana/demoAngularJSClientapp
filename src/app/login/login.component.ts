@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
+import { NgForm } from '@angular/forms';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,14 @@ import { NgForm } from "@angular/forms";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  
+  loginService:LoginService;
+  errorMessage:string;
+  httpdata:any;
+  
+  constructor(loginService:LoginService){
+     this.loginService = loginService;
+   }
 
   ngOnInit() {
   }
@@ -21,6 +28,17 @@ export class LoginComponent implements OnInit {
   onLogin(loginform:NgForm) {
     console.log('In login method');
     console.log('User details:',loginform.value);
+    this.getUsers();
   }
 
+  getUsers() {
+    console.log('Calling loginService.getUsers()');
+    this.loginService.getUsers()
+      .subscribe((data: any) => this.httpdata = data,
+       (error:any) => {this.errorMessage = error;console.log('Error:',this.errorMessage)});
+
+      console.log('Data from loginService:',this.httpdata);
+  }
+
+  
 }
