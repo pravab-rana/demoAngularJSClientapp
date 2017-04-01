@@ -1,5 +1,5 @@
 <p>
-  <h2>Login</h2>
+  <h2>Login Form</h2>
   <form (ngSubmit)="onLogin(loginform)" #loginform ="ngForm">
     <input type="text" [(ngModel)]="user.username"
              name="username"
@@ -16,7 +16,9 @@
     <input type="submit" value="Submit">
   </form>
   <br>
-  <h2>{{errorMessage}}</h2>
+  <div style="color:red" *ngIf="errorMessage">
+    <h2>Error:{{errorMessage}}</h2>
+  </div>
 <!--
   </p>
 -->

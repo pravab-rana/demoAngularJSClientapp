@@ -5,10 +5,11 @@ import { ModuleWithProviders } from '@angular/core';
 import { AppComponent } from "app/app.component";
 import { HelpComponent } from "app/help/help.component";
 import { PagenotfoundComponent } from "app/pagenotfound/pagenotfound.component";
+import { HomeComponent } from "app/home/home.component";
 
 export const routes:Routes = [
     {
-        path:"home",component:AppComponent
+        path:"home",component:HomeComponent
     },
     {
         path:"help",component:HelpComponent

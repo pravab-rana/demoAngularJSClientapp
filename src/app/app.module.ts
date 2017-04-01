@@ -10,13 +10,15 @@ import { routing } from './app.routes';
 import { LoginService } from './login.service';
 import { HelpComponent } from './help/help.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HelpComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
