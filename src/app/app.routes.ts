@@ -6,10 +6,15 @@ import { AppComponent } from "app/app.component";
 import { HelpComponent } from "app/help/help.component";
 import { PagenotfoundComponent } from "app/pagenotfound/pagenotfound.component";
 import { HomeComponent } from "app/home/home.component";
+import { UserdetailsComponent } from "app/userdetails/userdetails.component";
+import { UserdetailsGuard } from "app/userdetails.guard";
 
 export const routes:Routes = [
     {
         path:"home",component:HomeComponent
+    },
+    {
+        path:"userdetails",component:UserdetailsComponent,canActivate: [UserdetailsGuard]
     },
     {
         path:"help",component:HelpComponent

@@ -11,6 +11,8 @@ import { LoginService } from './login.service';
 import { HelpComponent } from './help/help.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { UserdetailsGuard } from "app/userdetails.guard";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     HelpComponent,
     PagenotfoundComponent,
-    HomeComponent
+    HomeComponent,
+    UserdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { HomeComponent } from './home/home.component';
     HttpModule,
     routing
   ],
-  providers: [LoginService],
+  providers: [LoginService,UserdetailsGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

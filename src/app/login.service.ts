@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class LoginService {
   http:Http
-  private getUsersUrl='http://localhost:3000/getusers'
+  private getUsersUrl:string ='http://localhost:3000/getusers';
   constructor(http:Http){
     this.http=http;
   }

@@ -42,6 +42,21 @@ export class LoginComponent implements OnInit {
             console.log('Matching username found');
             if(doc.password==loginform.value.password){
               console.log('Credentials match');
+             
+              var currentDtTm = new Date();
+              
+              //getTime() returns the numeric value in milliseconds since Jan 1,1970
+              //as such 60000 is 1 min, and I am setting the expiryDtTm to 5 mins
+              var expirtyDtTm = new Date(currentDtTm.getTime() + 5*60000);
+              
+              console.log('Date:'+Date());
+              console.log('Date+5',new Date(currentDtTm.getTime() + 5*60000));
+              
+              //adding to localStorage for persistance
+              localStorage.setItem('loggedusername',loginform.value.username);
+              localStorage.setItem('expirydttm',expirtyDtTm.toString());
+             
+              
             }
           }
         }
